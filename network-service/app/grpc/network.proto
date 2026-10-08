@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package network;
+
+service NetworkService {
+  rpc AllocateIP(AllocateIPRequest) returns (AllocateIPResponse);
+}
+
+message AllocateIPRequest {
+  string vm_id = 1;
+}
+
+message AllocateIPResponse {
+  string ip_address = 1;
+  bool success = 2;
+}
